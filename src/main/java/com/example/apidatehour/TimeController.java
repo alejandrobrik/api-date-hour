@@ -24,10 +24,16 @@ public class TimeController {
         String timeString;
         time = LocalDateTime.now();
         int hora = time.getHour();
+
+        LocalDateTime time2 = time.minus(5,ChronoUnit.HOURS);
+        System.out.println("la hora que obtuve es"+time2);
+
         hora= hora-5;
-        temp= LocalDateTime.of(time.getYear(),time.getMonth(),time.getDayOfMonth(),hora,time.getMinute());
+        time.minusHours(5);
+      //  temp= LocalDateTime.of(time.getYear(),time.getMonth(),time.getDayOfMonth(),time.time.getMinute());
         //timeString= time.toString();
-        timeString= temp.toString();
-        return "dateTime:"+timeString + "endTime";
+      //  timeString= temp.toString();
+      //  return "dateTime:"+timeString + "endTime";
+        return  "dateTime:"+time2.toString() + "endTime";
     }
 }
